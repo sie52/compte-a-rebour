@@ -22,16 +22,15 @@ function cmpt_rebours() {
         minute.textContent = formatTime(nb_m);
         second.textContent = formatTime(nb_s);
 
+        // Calcul des indices pour chaque unité de temps
         let index_j = nb_j % 2;
         let index_h = nb_h % 2;
         let index_m = nb_m % 2;
         let index_s = nb_s % 2;
         toggleDotClasses("DTdivider", "DBdivider", index_j);
         toggleDotClasses("HTdivider", "HBdivider", index_h);
-        toggleDotClasses("MTdivide", "MBdivider", index_m);
+        toggleDotClasses("MTdivider", "MBdivider", index_m);
         toggleDotClasses("STdivider", "SBdivider", index_s);
-        
-
         playSound(); 
     }
 
@@ -41,7 +40,6 @@ function cmpt_rebours() {
 function formatTime(t) {
     return (t < 10) ? '0' + t : t;
 }
-
 
 function toggleDotClasses(topId, bottomId, index) {
     let topDivider = document.getElementById(topId);
